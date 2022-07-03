@@ -9,7 +9,7 @@
         - build
 
     - name: Build my App2
-      shell: cd /home/andriamahefa/Desktop/DevOpsProject/DevOpsProject/App2 && build -t pythonapp2:0.1 .
+      shell: cd /home/andriamahefa/Desktop/DevOpsProject/DevOpsProject/App2 && docker build -t pythonapp2:0.1 .
       tags:
         - python
         - build
