@@ -1,8 +1,6 @@
 - hosts: localhost
   become: yes
 
-
-
   tasks:
     - name: Build my App1
       shell: cd /home/andriamahefa/Desktop/DevOpsProject/DevOpsProject/App1 && docker build -t pythonapp:0.1 .
@@ -41,7 +39,7 @@
 
 
     - name: Run App1 container
-      shell: docker run -d -p 5001:5000 --name App1  pythonapp1:0.1
+      shell: docker run -d -p 5001:5000 --name App1  pythonapp:0.1
       tags:
           - run
 
