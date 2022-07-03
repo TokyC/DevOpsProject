@@ -11,7 +11,7 @@ def hello_world() :  # put application's code here
 
 @app.route('/createTable', methods=['GET'])
 def createTable():
-    connection = pymysql.connect(host='host.docker.internal',
+    connection = pymysql.connect(host='localhost',
                                  user='root',
                                  password='admin',
                                  database='mysql', port=6603)
