@@ -17,10 +17,9 @@
     - name: Run ES container
       shell: cd /home/andriamahefa/Desktop/DevOpsProject/DevOpsProject/ElasticSearch && docker-compose up -d
 
-    -
     - name: Run MySQL container
-      - shell: docker run --detach --name=mysql --env="MYSQL_ROOT_PASSWORD=admin" --publish 6603:3306 --volume=/root/docker/mysql/conf.d:/etc/mysql/conf.d mysql
-      - tags: run
+      shell: docker run --detach --name=mysql --env="MYSQL_ROOT_PASSWORD=admin" --publish 6603:3306 --volume=/root/docker/mysql/conf.d:/etc/mysql/conf.d mysql
+      tags: run
 
 
 #    - name: Run ES container
