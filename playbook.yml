@@ -3,19 +3,19 @@
 
   tasks:
     - name: Build my App1
-      shell: cd /home/andriamahefa/Desktop/DevOpsProject/DevOpsProject/App1 && docker build -t pythonapp:0.1 .
+      shell: cd /home/andriamahefa/Desktop/DevOpsProject/App1 && docker build -t pythonapp:0.1 .
       tags:
         - python
         - build
 
     - name: Build my App2
-      shell: cd /home/andriamahefa/Desktop/DevOpsProject/DevOpsProject/App2 && docker build -t pythonapp2:0.1 .
+      shell: cd /home/andriamahefa/Desktop/DevOpsProject/App2 && docker build -t pythonapp2:0.1 .
       tags:
         - python
         - build
 
     - name: Run ES container
-      shell: cd /home/andriamahefa/Desktop/DevOpsProject/DevOpsProject/ElasticSearch && docker-compose up -d
+      shell: cd /home/andriamahefa/Desktop/DevOpsProject/ElasticSearch && docker-compose up -d
       tags:
         - build
 
