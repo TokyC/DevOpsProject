@@ -6,4 +6,4 @@ RUN apt -y update && apt install nano &&apt install -y python3-pip && pip3 insta
 ENV FLASK_APP=run.py
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_ENV=development
-ENTRYPOINT ["flask", "run"]
+ENTRYPOINT ["flask", "app"]
