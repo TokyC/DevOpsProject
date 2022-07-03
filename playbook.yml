@@ -5,7 +5,7 @@
 
   tasks:
     - name: Build my App1
-      shell: cd /home/andriamahefa/Desktop/DevOpsProject/DevOpsProject/App1 && docker build -t pythonapp:0.1 .
+      shell: cd /home/andriamahefa/Desktop/DevOpsProject/DevOpsProject/App1 && sudo docker build -t pythonapp:0.1 .
       tags:
         - python
         - build
@@ -31,9 +31,17 @@
 #      shell: docker run -d -p 5001:5000 --name pyapp  pythonapp:0.1
 #      tags:
 #        - run
+#    - name: Run MySQL container
+#      - shell: docker run --detach --name=mysql --env="MYSQL_ROOT_PASSWORD=admin" --publish 6603:3306 --volume=/root/docker/mysql/conf.d:/etc/mysql/conf.d mysql
+#      - tags: run
+
+
+#    - name: Run ES container
+#      - shell: docker run -e ES_JAVA_OPTS="-Xms500m -Xmx500m" --name es01 --net elastic -p 9200:9200 -p 9300:9300 -it docker.elastic.co/elasticsearch/elasticsearch:8.3.1
+
 
     - name: Run App1 container
-      shell: docker run -d -p 5001:5000 --name App1  pythonapp1:0.1
+      shell: sudo docker run -d -p 5001:5000 --name App1  pythonapp1:0.1
       tags:
           - run
 
