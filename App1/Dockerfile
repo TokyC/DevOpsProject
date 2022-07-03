@@ -1,10 +1,11 @@
 FROM ubuntu:20.04
-WORKDIR /code
-COPY . .
-EXPOSE 5001
-RUN apt -y update && apt install nano &&apt install -y python3-pip && pip3 install flask
+WORKDIR /project
 ENV FLASK_APP=run.py
 ENV FLASK_RUN_HOST=0.0.0.0
-ENV FLASK_ENV=development
-ENTRYPOINT ["flask", "appls
-"]
+ADD . /project
+EXPOSE 5000
+RUN apt-get update \
+        && apt install -y python3-pip python3-flask\
+        && pip install -r requirements.txt
+        # && flask run
+ENTRYPOINT ["flask","run"]
