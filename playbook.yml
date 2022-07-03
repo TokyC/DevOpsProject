@@ -30,13 +30,13 @@
         - run
 
     - name: Run App1 container
-        shell: docker run -d -p 5001:5000 --name pyapp  pythonapp:0.1
-        tags:
+      shell: docker run -d -p 5001:5000 --name pyapp  pythonapp:0.1
+      tags:
           - run
 
     - name: Run App2 container
-        shell: docker run -d -p 5001:5000 --name pyapp  pythonapp:0.1
-        tags:
+      shell: docker run -d -p 5001:5000 --name pyapp  pythonapp:0.1
+      tags:
           - run
 
 
