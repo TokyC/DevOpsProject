@@ -5,44 +5,47 @@
 
   tasks:
     - name: Build my App1
-      shell: cd /home/arous/docker_exam/java && docker build -t javaapp:0.1 .
-
-
-
-    - name: Build my App2
-      shell: cd /home/arous/docker_exam/python && docker build -t pythonapp:0.1 .
+      shell: cd /home/andriamahefa/Desktop/DevOpsProject/DevOpsProject/App1 && docker build -t pythonapp:0.1 .
       tags:
         - python
         - build
 
 
 
-    - name: Run MySQL container
-      shell: docker run -d -p 8061:8061 --name javaapp  javaapp:0.1
-      tags:
-        - run
+#    - name: Build my App2
+#      shell: cd /home/arous/docker_exam/python && docker build -t pythonapp:0.1 .
+#      tags:
+#        - python
+#        - build
 
 
 
-    - name: Run ES container
-      shell: docker run -d -p 5001:5000 --name pyapp  pythonapp:0.1
-      tags:
-        - run
+#    - name: Run MySQL container
+#      shell: docker run -d -p 8061:8061 --name javaapp  javaapp:0.1
+#      tags:
+#        - run
+
+
+
+#    - name: Run ES container
+#      shell: docker run -d -p 5001:5000 --name pyapp  pythonapp:0.1
+#      tags:
+#        - run
 
     - name: Run App1 container
-      shell: docker run -d -p 5001:5000 --name pyapp  pythonapp:0.1
+      shell: docker run -d -p 5001:5000 --name App1  pythonapp1:0.1
       tags:
           - run
 
-    - name: Run App2 container
-      shell: docker run -d -p 5001:5000 --name pyapp  pythonapp:0.1
-      tags:
-          - run
+#    - name: Run App2 container
+#      shell: docker run -d -p 5001:5000 --name pyapp  pythonapp:0.1
+#      tags:
+#          - run
 
 
     - name: check
       uri:
-        url: http://192.168.177.170:8061/fsfs
+        url: http://localhost:5001/
         method: GET
         status_code: 200
       tags:
