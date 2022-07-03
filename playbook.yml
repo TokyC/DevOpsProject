@@ -42,7 +42,6 @@
 
     - name: Run App1 container
       shell: docker run -d -p 5001:5000 --name App1  pythonapp1:0.1
-      sudo:yes
       tags:
           - run
 
