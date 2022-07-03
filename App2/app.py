@@ -23,16 +23,11 @@ def hello_world() :
     return 'Hello World!'
 
 
-def
-
 @app.post('/load')
-def dataFromSQLtoES:
+def dataFromSQLtoES():
     data = requests.get("localhost:")
 
 
 
 if __name__ == '__main__' :
     app.run()
-
-
-sudo apt-get install docker-ce=5:20.10.17~3-0~ubuntu-jammy docker-ce-cli=5:20.10.17~3-0~ubuntu-jammy containerd.io docker-compose-plugin
