@@ -8,30 +8,19 @@
         - python
         - build
 
+    - name: Build my App2
+      shell: cd /home/andriamahefa/Desktop/DevOpsProject/DevOpsProject/App2 && build -t pythonapp2:0.1 .
+      tags:
+        - python
+        - build
 
+    - name: Run ES container
+      shell: cd /home/andriamahefa/Desktop/DevOpsProject/DevOpsProject/ElasticSearch && docker-compose up -d
 
-#    - name: Build my App2
-#      shell: cd /home/arous/docker_exam/python && docker build -t pythonapp:0.1 .
-#      tags:
-#        - python
-#        - build
-
-
-
-#    - name: Run MySQL container
-#      shell: docker run -d -p 8061:8061 --name javaapp  javaapp:0.1
-#      tags:
-#        - run
-
-
-
-#    - name: Run ES container
-#      shell: docker run -d -p 5001:5000 --name pyapp  pythonapp:0.1
-#      tags:
-#        - run
-#    - name: Run MySQL container
-#      - shell: docker run --detach --name=mysql --env="MYSQL_ROOT_PASSWORD=admin" --publish 6603:3306 --volume=/root/docker/mysql/conf.d:/etc/mysql/conf.d mysql
-#      - tags: run
+    -
+    - name: Run MySQL container
+      - shell: docker run --detach --name=mysql --env="MYSQL_ROOT_PASSWORD=admin" --publish 6603:3306 --volume=/root/docker/mysql/conf.d:/etc/mysql/conf.d mysql
+      - tags: run
 
 
 #    - name: Run ES container
@@ -43,10 +32,10 @@
       tags:
           - run
 
-#    - name: Run App2 container
-#      shell: docker run -d -p 5001:5000 --name pyapp  pythonapp:0.1
-#      tags:
-#          - run
+    - name: Run App2 container
+      shell: docker run -d -p 5001:5000 --name App2  pythonapp2:0.1
+      tags:
+          - run
 
 
     - name: check

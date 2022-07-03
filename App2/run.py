@@ -15,7 +15,7 @@ def hello_world() :
 
     # Create the client instance
     client = Elasticsearch(
-        "https://localhost:9200")
+        "http://localhost:9200")
 
     # Successful response!
     print(client.info())
@@ -24,8 +24,15 @@ def hello_world() :
 
 @app.route('/load',methods=['GET'])
 def dataFromSQLtoES():
+    es = Elasticsearch(
+        "http://localhost:9200")
     data = requests.get("http://localhost:5001/load")
-    print(data.json())
+    matieres_dict = data.json()
+
+    for i, matiere in enumerate(matieres_dict["matieres"]):
+        print(matiere)
+        resp = es.index(index="matiere", id=i,body=matiere)
+        print(resp['result'])
     return "OK"
 
 
