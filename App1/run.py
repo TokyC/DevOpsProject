@@ -11,7 +11,7 @@ def hello_world() :  # put application's code here
 
 @app.route('/createTable', methods=['GET'])
 def createTable():
-    connection = pymysql.connect(host='host.docker.internal',
+    connection = pymysql.connect(host='0.0.0.0',
                                  user='root',
                                  password='admin',
                                  database='mysql', port=6603)
@@ -26,7 +26,7 @@ def createTable():
 
 @app.route('/pushDataToMySQL', methods=['GET'])
 def pushDataToMySQL():
-    connection = pymysql.connect(host='host.docker.internal',
+    connection = pymysql.connect(host='0.0.0.0',
                                  user='root',
                                  password='admin',
                                  database='mysql', port=6603)
@@ -55,7 +55,7 @@ def loadMySQL() :
     # Connect to the database
 
 
-    connection = pymysql.connect(host='host.docker.internal',
+    connection = pymysql.connect(host='0.0.0.0',
                                  user='root',
                                  password='admin',
                                  database='mysql',port=6603)
