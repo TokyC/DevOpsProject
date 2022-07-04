@@ -21,6 +21,11 @@ def hello_world() :
     print(client.info())
     return 'Hello World!'
 
+@app.route('/test')
+def test() :
+    
+    return 'test'
+
 
 @app.route('/load',methods=['GET'])
 def dataFromSQLtoES():
@@ -38,4 +43,4 @@ def dataFromSQLtoES():
 
 
 if __name__ == '__main__' :
-    app.run()
+    app.run(host='0.0.0.0', port=5000)

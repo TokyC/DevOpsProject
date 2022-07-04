@@ -11,7 +11,7 @@ def hello_world() :  # put application's code here
 
 @app.route('/createTable', methods=['GET'])
 def createTable():
-    connection = pymysql.connect(host='localhost',
+    connection = pymysql.connect(host='host.docker.internal',
                                  user='root',
                                  password='admin',
                                  database='mysql', port=6603)
@@ -77,6 +77,15 @@ def loadMySQL() :
 
     return app.response_class(response=json.dumps(response), status=200, mimetype='application/json')
 
+@app.route('/load2', methods=['GET'])
+def loadMySQL2() :
+
+    response = {
+        "matieres":[{"nom": "Anglais", "description":"Très bien", "nb_heure":3},{"nom":"Math", "description":"la matière est intéressante", "nb_heure":5}]
+    }
+
+    return app.response_class(response=json.dumps(response), status=200, mimetype='application/json')
+
 
 if __name__ == '__main__' :
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
