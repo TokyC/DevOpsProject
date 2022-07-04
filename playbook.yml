@@ -5,13 +5,13 @@
     - name: Build my App1
       shell: cd /home/andriamahefa/Desktop/DevOpsProject/App1 && docker build -t pythonapp:0.1 .
       tags:
-        - python
+        - app1
         - build
 
     - name: Build my App2
       shell: cd /home/andriamahefa/Desktop/DevOpsProject/App2 && docker build -t pythonapp2:0.1 .
       tags:
-        - python
+        - app2
         - build
 
     - name: Run ES container
